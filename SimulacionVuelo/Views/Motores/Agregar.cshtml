@@ -1,0 +1,38 @@
+﻿@{
+  
+    var myList = ViewBag.MyList;
+}
+
+@model Motor
+
+@{
+    ViewData["Title"] = "Agregar";
+}
+
+<h2 class="display-4">Agregar motores</h2>
+<form method="POST">
+    <div class="form-group">
+        <label asp-for="nombre">Nombre del motor:</label>
+        <input asp-for="nombre" class="form-control" placeholder="Ingresa nombre del motor">
+    </div>
+    <div class="form-group">
+        <label asp-for="comburente">Capacidad comburente:</label>
+        <input asp-for="comburente" type="number" step="any" class="form-control" placeholder="Ingresa peso en kg">
+    </div>
+    <div class="form-group">
+        <label asp-for="CombustibleId">Selecciona el combustible para el motor:</label>
+        <select class="form-control" asp-for="CombustibleId">
+            @foreach (var option in myList)
+            {
+                <option value="@option">@option</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="capicidadCombustible">Capacidad de combustible:</label>
+        <input asp-for="capicidadCombustible" type="number" step="any" class="form-control" placeholder="Introduce combustible">
+    </div>
+   
+    <button type="submit" class="btn btn-primary" style="margin-top:10px">Enviar</button>
+</form>
+

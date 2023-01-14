@@ -1,0 +1,21 @@
+﻿@model Combustible
+@{
+    ViewData["Title"] = "Agregar";
+}
+
+<h2 class="display-4">Agregar combustibles</h2>
+<form method="POST">
+    <div class="form-group">
+        <label asp-for="nombre">Nombre:</label>
+        <input asp-for="nombre" class="form-control" placeholder="Ingresa nombre combustible">
+    </div>
+    <div class="form-group">
+        <label asp-for="estado">Selecciona una estado:</label>
+        <select class="form-control" asp-for="estado">
+            <option>Líquido</option>
+            <option>Sólido</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top:10px">Enviar</button>
+</form>
+
