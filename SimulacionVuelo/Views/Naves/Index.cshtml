@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Nave>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="display-4">Naves en el sistema</h2>
+<button class="btn btn-primary" type="button" style="margin-left:88.5%"><a asp-area="" asp-controller="Naves" asp-action="Agregar" style="color: white; text-decoration: none">Agregar Nave</a></button>
+<table class="table table-striped table-hover" style="margin-top:70px">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Longitud</th>
+            <th scope="col">Ancho</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Motor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var nave in Model)
+        {
+            <tr>
+                <th scope="row">@nave.Id</th>
+                <td>@nave.nombre</td>
+                <td>@nave.longitud</td>
+                <td>@nave.ancho</td>
+                <td>@nave.peso</td>
+                <td>@nave.Motor.nombre</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

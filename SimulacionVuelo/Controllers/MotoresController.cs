@@ -24,10 +24,11 @@ namespace SimulacionVuelo.Controllers
         
             var conexion = _context.Database.GetDbConnection();
             IEnumerable<Motor> ListMotor = _context.motores.ToList();
-          
-            
+
+
             foreach (var motor in ListMotor) {
-                var combustible = _context.combustibles.Where(p => p.Id == motor.CombustibleId).SingleOrDefault();
+              
+                var combustible = _context.combustibles.Where(p => p.Id ==  motor.CombustibleId).SingleOrDefault();
                 motor.Combustible = combustible;
             }
             return View(ListMotor);
@@ -54,9 +55,13 @@ namespace SimulacionVuelo.Controllers
 
         {
 
-            motor.Id = Guid.NewGuid().ToString();
-            var combustible = _context.combustibles.Where(p => p.nombre == motor.CombustibleId).SingleOrDefault();
+            //motor.Id = Guid.NewGuid().ToString();
+            motor.combustiblePorSegundo = Math.Round(motor.combustiblePorSegundo, 2);
+            motor.oxigenoPorSegundo  = Math.Round(motor.oxigenoPorSegundo, 2);
+            motor.eficienciaCombustible = Math.Round(motor.eficienciaCombustible, 2);
+            var combustible = _context.combustibles.Where(p => p.nombre == motor.Combustible.nombre).SingleOrDefault();
             motor.CombustibleId = combustible.Id;
+            motor.Combustible = combustible;
             _context.motores.Add(motor);
             _context.SaveChanges();
 

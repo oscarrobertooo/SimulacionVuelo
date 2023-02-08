@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 using SimulacionVuelo.Models;
 
 namespace SimulacionVuelo.Controllers
@@ -20,7 +21,11 @@ namespace SimulacionVuelo.Controllers
         public ActionResult Index()
         {
             var conexion = _context.Database.GetDbConnection();
-            IEnumerable<Piloto> ListPiloto = _context.pilotos;
+            IEnumerable<Piloto> ListPiloto = _context.pilotos.ToList();
+            foreach (var pilot in ListPiloto) { 
+                pilot.peso = Math.Round(pilot.peso, 2);
+                pilot.altura = Math.Round(pilot.altura, 2);
+            }
             return View(ListPiloto);
         }
 
@@ -41,7 +46,11 @@ namespace SimulacionVuelo.Controllers
 
         {
 
-            piloto.Id = Guid.NewGuid().ToString();
+          
+            piloto.peso = Math.Round(piloto.peso, 2);
+            piloto.altura = Math.Round(piloto.altura, 2);
+            
+
             _context.pilotos.Add(piloto);
             _context.SaveChanges();
 

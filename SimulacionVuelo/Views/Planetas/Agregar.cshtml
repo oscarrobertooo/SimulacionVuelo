@@ -1,0 +1,37 @@
+﻿@model Planeta
+@{
+    ViewData["Title"] = "Agregar";
+}
+
+<h2 class="display-4">Agregar planeta</h2>
+<form method="POST">
+    <div class="form-group">
+        <label asp-for="nombre">Nombre:</label>
+        <input asp-for="nombre" class="form-control" placeholder="Ingresa nombre del planeta">
+    </div>
+    <div class="form-group">
+        <label asp-for="clima">Selecciona el clima del planeta:</label>
+        <select class="form-control" asp-for="clima">
+            <option value="templado">Templado</option>
+            <option value="frio">Frio</option>
+            <option value="caluroso">Caluroso</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="longitud">Longitud:</label>
+        <input asp-for="longitud" type="number" step="any" class="form-control" placeholder="Ingresa longitud del planeta en Km">
+    </div>
+     <div class="form-group">
+        <label asp-for="latitud">Latitud:</label>
+        <input asp-for="latitud" type="number" step="any" class="form-control" placeholder="Ingresa latitud del planeta en Km">
+    </div>
+    <div class="form-group">
+        <label asp-for="altitud">Altitud:</label>
+        <input asp-for="altitud" type="number" step="any" class="form-control" placeholder="Ingresa altitud del planeta en Km">
+    </div>
+    <div class="form-group">
+        <label asp-for="distaciaDeLaTierra">Distancia hacia la Tierra</label>
+        <input asp-for="distaciaDeLaTierra" type="number" step="any" class="form-control" placeholder="Ingresa la distancia del planeta a la Tierra">
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top:10px">Enviar</button>
+</form>

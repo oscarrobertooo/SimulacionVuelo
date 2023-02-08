@@ -1,6 +1,7 @@
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\PubTmp\Out\SimulacionVuelo.exe
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\PubTmp\Out\libman.json
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\PubTmp\Out\SimulacionVuelo.dll
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\PubTmp\Out\SimulacionVuelo.deps.json
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\PubTmp\Out\SimulacionVuelo.runtimeconfig.json

@@ -17,6 +17,30 @@ body {
   margin-bottom: 60px;
 }
 
+.card {
+    background-color: rgba(0, 0, 255, 0.5); /* Azul medio transparente */
+}
+
+
+.card-text {
+    color: #000080; /* Azul oscuro */
+}
+#speed, #altitude, #fuel {
+    color: #000000; /* Negro */
+}
+
+#rocket {
+    width: 100px; /* Tamaño del cohete */
+    position: absolute; /* Posiciona el cohete */
+    top: 100%; /* Posiciona el cohete en el medio verticalmente */
+    left: 50%; /* Posiciona el cohete en el medio horizontalmente */
+    transform: translate(-60%, -60%); /* Ajusta la posición del cohete */
+}
+
+.bg-secondary {
+    padding: 15px;
+    border-radius: 10px;
+}
 
 
 

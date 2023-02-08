@@ -1,8 +1,113 @@
-﻿@{
+﻿@model Simulacion
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background-color: #123456;
+    }
+</style>
+
+<div id="myDiv" class="bg-secondary">
+    <form method="POST">
+        <div class="form-group">
+            <label  style="color: white">Selecciona un Piloto:</label>
+            <select name="IdPiloto"  class="form-control">
+              
+                @foreach (Piloto piloto in Model.pilotos)
+                {
+
+                    <option value="@piloto.Id">@piloto.nombre</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label   style="color: white">Selecciona un Planeta:</label>
+            <select name="IdPlaneta" class="form-control">
+                @foreach (Planeta planeta in Model.planetas)
+                {
+
+                    <option value="@planeta.Id">@planeta.nombre</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label style="color: white">Selecciona una Nave:</label>
+            <select name="IdNave" class="form-control">
+                @foreach (Nave nave in Model.naves)
+                {
+                    <option value="@nave.Id">@nave.nombre</option>
+                }
+            </select>
+        </div>
+        <button type="submit" id="enviar" class="btn btn-primary" style="margin-top:10px">Enviar</button>
+    </form>
+
 </div>
+
+<div class="card bg-secondary text-light" style="width: 18rem; margin-left: 80%; margin-top: 5%">
+    <div class="card-body">
+        <h5 class="card-title" style=" color: #000080">Simulación de vuelo</h5>
+        <hr />
+        <p class="card-text">Tiempo estimado de llegada: <span style="color: white;" id="tiempoEstimadoLLegada"></span>Hr</p>
+        <hr />
+        <p class="card-text">Clima del exterior: <span style="color: white;" id="climaExterior"></span> C°</p>
+        <hr />
+        <p class="card-text">Tanque de oxigeno: <span style="color: white;" id="comburete"></span> %</p>
+        <hr />
+        <p class="card-text">Combustible: <span style="color: white;" id="combustible"></span> %</p>
+        <hr />
+        <p class="card-text">Hora en la Tierra: <span style="color: white;" id="horaTierra"></span> Hrs</p>
+        <hr />
+        <p class="card-text">Tiempo en el vuelo: <span style="color: white;" id="tiempoEnVuelo"></span> Hr</p>
+        <hr />
+        <p class="card-text">Velocidad: <span style="color: white;" id="velocidad"></span> km/h</p>
+        <hr />
+        <button id="myButton" type="button" class="btn btn-primary">Subir/Bajar formulario</button>
+    </div>
+</div>
+<img src="~/rocket.png" id="rocket" alt="Rocket">
+
+
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script >
+
+
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+    //Disable the send button until connection is established.
+    document.getElementById("enviar").disabled = true;
+    var rocket = document.querySelector("#rocket");
+
+
+
+    connection.on("ReceiveMessage", function (tiempoEstimadoLLegada, climaExterior, comburete, combustible, horaTierra, tiempoEnVuelo, velocidad, posicionNave) {
+
+        document.getElementById("myDiv").hidden = true;
+        document.querySelector("#tiempoEstimadoLLegada").innerText = '' + tiempoEstimadoLLegada;
+        document.querySelector("#climaExterior").innerText = '' + climaExterior;
+        document.querySelector("#comburete").innerText = '' + comburete;
+        document.querySelector("#combustible").innerText = '' + combustible;
+        document.querySelector("#horaTierra").innerText = '' + horaTierra;
+        document.querySelector("#tiempoEnVuelo").innerText = '' + tiempoEnVuelo;
+        document.querySelector("#velocidad").innerText = '' + velocidad;
+        rocket.style.animation = "slide 20s linear forwards";
+
+
+
+    });
+
+    connection.start().then(function () {
+        document.getElementById("enviar").disabled = false;
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+
+
+</script>
+
+

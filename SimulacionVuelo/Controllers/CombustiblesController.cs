@@ -41,7 +41,7 @@ namespace SimulacionVuelo.Controllers
 
         {
 
-            combustible.Id = Guid.NewGuid().ToString();
+         
             _context.combustibles.Add(combustible);
             _context.SaveChanges();
 

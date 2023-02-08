@@ -1,12 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimulacionVuelo.Models
 {
 
-    [Index(nameof(nombre), IsUnique = true)]
+ 
     public class Combustible
     {
-        public string Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         public  string  nombre { get; set; }
 

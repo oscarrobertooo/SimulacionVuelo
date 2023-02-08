@@ -1,0 +1,40 @@
+﻿@{
+
+    var myList = ViewBag.MyList;
+}
+
+@model Nave
+
+@{
+    ViewData["Title"] = "Agregar";
+}
+
+<h2 class="display-4">Agregar naves</h2>
+<form method="POST">
+    <div class="form-group">
+        <label asp-for="nombre">Nombre de la nave:</label>
+        <input asp-for="nombre" class="form-control" placeholder="Ingresa nombre de la nave">
+    </div>
+    <div class="form-group">
+        <label asp-for="longitud">Longitud nave:</label>
+        <input asp-for="longitud" type="number" step="any" class="form-control" placeholder="Ingresa longitud en metros">
+    </div>
+    <div class="form-group">
+        <label asp-for="ancho">Ancho nave:</label>
+        <input asp-for="ancho" type="number" step="any" class="form-control" placeholder="Ingresa ancho en metros">
+    </div>
+    <div class="form-group">
+        <label asp-for="peso">Peso nave:</label>
+        <input asp-for="peso" type="number" step="any" class="form-control" placeholder="Ingresa peso en Kg">
+    </div>
+    <div class="form-group">
+        <label asp-for="Motor.nombre">Selecciona el motor para la nave:</label>
+        <select class="form-control" asp-for="Motor.nombre">
+            @foreach (var option in myList)
+            {
+                <option value="@option">@option</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top:10px">Enviar</button>
+</form>

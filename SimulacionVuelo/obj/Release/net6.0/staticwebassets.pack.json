@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Clemente\\source\\repos\\SimulacionVuelo\\SimulacionVuelo\\wwwroot\\js\\chat.js",
+      "PackagePath": "staticwebassets\\js\\chat.js"
+    },
+    {
+      "Id": "C:\\Users\\Clemente\\source\\repos\\SimulacionVuelo\\SimulacionVuelo\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Id": "C:\\Users\\Clemente\\source\\repos\\SimulacionVuelo\\SimulacionVuelo\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.min.js"
+    },
+    {
       "Id": "C:\\Users\\Clemente\\source\\repos\\SimulacionVuelo\\SimulacionVuelo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -243,6 +255,14 @@
     {
       "Id": "C:\\Users\\Clemente\\source\\repos\\SimulacionVuelo\\SimulacionVuelo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Clemente\\source\\repos\\SimulacionVuelo\\SimulacionVuelo\\wwwroot\\rocket.jpeg",
+      "PackagePath": "staticwebassets\\rocket.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Clemente\\source\\repos\\SimulacionVuelo\\SimulacionVuelo\\wwwroot\\rocket.png",
+      "PackagePath": "staticwebassets\\rocket.png"
     },
     {
       "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.SimulacionVuelo.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,16 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using SimulacionVuelo.Models;
+using SimulacionVuelo.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
 
 
 
 string conexion = ConfigurationExtensions.GetConnectionString(builder.Configuration, "Conexion");
 Console.Write(conexion);
 builder.Services.AddDbContext<SistemaAviacionContext>(options => options.UseSqlServer(conexion));
+
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -47,6 +51,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();
 

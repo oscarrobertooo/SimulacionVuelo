@@ -1,15 +1,17 @@
-﻿namespace SimulacionVuelo.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SimulacionVuelo.Models
 {
     public class Piloto
     {
-
-        public string Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         public string nombre { get; set; }
 
-        public float peso { get; set; }
+        public double peso { get; set; }
 
-        public float altura { get; set; }
+        public double altura { get; set; }
 
 
     }

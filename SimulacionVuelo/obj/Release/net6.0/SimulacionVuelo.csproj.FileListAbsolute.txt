@@ -280,3 +280,4 @@ C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\SimulacionVuelo.pdb
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\SimulacionVuelo.genruntimeconfig.cache
 C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\obj\Release\net6.0\ref\SimulacionVuelo.dll
+C:\Users\Clemente\source\repos\SimulacionVuelo\SimulacionVuelo\bin\Release\net6.0\libman.json

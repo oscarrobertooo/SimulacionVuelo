@@ -12,6 +12,12 @@ namespace SimulacionVuelo.Models
 
         public DbSet<Motor> motores { get; set; }
 
+        public DbSet<Nave> naves { get; set; }
+
+        public DbSet<Planeta> planetas { get; set; }
+
+        public DbSet<Vuelo> vuelos { get; set; }
+
 
         public SistemaAviacionContext(DbContextOptions<SistemaAviacionContext> options) : base(options)
         {
